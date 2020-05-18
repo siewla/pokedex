@@ -5,12 +5,14 @@
     </head>
     <body>
         <h1>List of All Pokémon</h1>
-        <div class = "pokemon-container">
+        <div class = 'pokemon-container'>
             <% data.forEach((item, index) => { %>
-                <div class = 'pokemon-card'>
-                    <img class='pokemon-image' src =<%=item.img%>
-                    <h3 class='pokemon-name'><%=item.name%></h3>
-                </div>
+                <a href= '/pokedex/<%=index%>'>
+                    <div class = 'pokemon-card'>
+                        <img class='pokemon-image' src =<%=item.img%>
+                        <h3 class='pokemon-name'><%=item.name%></h3>
+                    </div>  
+                </a>
             <% }) %>
         </div>
     </body>
