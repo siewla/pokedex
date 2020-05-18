@@ -6,10 +6,12 @@
     <body>
         <h1>Add New Pokémon</h1>
         <div class = 'pokemon-form'>
-            <form action ='/' method="POST">
+            <form action ='/' method='POST'>
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name" required="true"/>
-                <button class="btn waves-effect waves-light" type="submit" name="action">Create New Pokémon</button>
+                <input type="text" name="name" required="true"/>
+                <label for="image-url">Image URL</label>
+                <input type="text" name="img" required="true"/>
+                <input type="submit" value="Create New Pokémon">
             </form>
         </div>
     </body>

@@ -5,6 +5,7 @@ module.exports = (app) => {
     app.get('/new', pokedexControllers.init); //new route
     app.get('/:index', pokedexControllers.show); //show route
     app.post('/', pokedexControllers.create); //create/post route
+    app.delete('/:index', pokedexControllers.deleteItem) //delete route
 
     // app.get('/', home);
     // app.get('/budget', index); //index route

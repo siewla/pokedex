@@ -4,13 +4,19 @@
     flex-wrap: wrap;
 }
 
-.pokemon-card {
+.image-and-name {
     display: flex;
     flex-direction: column;
     background-color: aqua;
     border: 1px solid black;
     padding: 1vh;
     margin: 1vh;
+}
+
+.actions-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .pokemon-image{
