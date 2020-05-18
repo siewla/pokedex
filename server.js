@@ -1,12 +1,18 @@
 //DEPENDENCIES
 const express   =   require('express');
 const app       =   express();
-const POKEMONS  =   require('./models/pokemon');
+const POKEMON  =   require('./models/pokemon');
 
 const port      =   process.env.PORT || 3000;
 
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+
+
 app.get('/', (req, res) =>{
-    res.send('Working');
+    console.log(POKEMON[1].name);
+    console.log(POKEMON[1].img);
+    res.render('pokedex/index.ejs', { data: POKEMON });
 });
 
 //LISTENER
