@@ -10,9 +10,11 @@ app.use(express.static('public'));
 
 
 app.get('/', (req, res) =>{
-    console.log(POKEMON[1].name);
-    console.log(POKEMON[1].img);
     res.render('pokedex/index.ejs', { data: POKEMON });
+});
+
+app.get('/:index', (req, res) => {
+    res.render('pokedex/show.ejs', { data : POKEMON[req.params.index] });
 });
 
 //LISTENER

@@ -7,7 +7,7 @@
         <h1>List of All Pokémon</h1>
         <div class = 'pokemon-container'>
             <% data.forEach((item, index) => { %>
-                <a href= '/pokedex/<%=index%>'>
+                <a href= '/<%=index%>'>
                     <div class = 'pokemon-card'>
                         <img class='pokemon-image' src =<%=item.img%>
                         <h3 class='pokemon-name'><%=item.name%></h3>
