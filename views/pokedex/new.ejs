@@ -4,14 +4,16 @@
         <%- include('../partials/head.ejs') %>
     </head>
     <body>
-        <h1>Add New Pokémon</h1>
+        <h1 id='heading'>Create New Pokémon</h1>
         <div class = 'pokemon-form'>
             <form action ='/' method='POST'>
-                <label for="name">Name</label>
+                <label for="name" class="input-header">Name</label>
                 <input type="text" name="name" required="true"/>
-                <label for="image-url">Image URL</label>
+                <label for="image-url" class="input-header">Image URL</label>
                 <input type="text" name="img" required="true"/>
-                <input type="submit" value="Create New Pokémon">
+                <div style = "text-align:right">
+                    <button id ="create-button" type="submit">Create New Pokémon</button>
+                </div>
             </form>
         </div>
     </body>
