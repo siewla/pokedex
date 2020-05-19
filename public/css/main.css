@@ -107,3 +107,17 @@ body {
     width: 15vh;
     height: 15vh;
 }
+
+.delete-all {
+    background-color: red;
+}
+
+.delete-button {
+    background-color: rgb(255, 0, 76);
+    border-radius: 1vh;
+}
+
+.edit-button {
+    background-color: rgb(26, 194, 143);
+    border-radius: 1vh;
+}
