@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head.ejs') %>
+    </head>
+    <body>
+        <h1 id='heading'>Edit Pokémon</h1>
+        <div class = 'pokemon-form'>
+            <form action="/<%=index%>?_method=PUT" method="POST">
+                <label for="name" class="input-header">Name</label>
+                <input type="text" name="name" value="<%=data.name%>" required="true"/>
+                <label for="image-url" class="input-header">Image URL</label>
+                <input type="text" name="img" value="<%=data.img%>" required="true"/>
+                <label for="type" class="input-header">Type</label>
+                <input type="text" name="type" value="<%=data.type%>" required="true"/>
+                <div style = "text-align:right">
+                    <button id ="create-button" type="submit">Create New Pokémon</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

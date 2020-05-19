@@ -102,3 +102,8 @@ body {
 .show-container > div> h2 >ul > li{
     padding: 0.5vh;
 }
+
+#pokemon-image-show{
+    width: 15vh;
+    height: 15vh;
+}

@@ -7,7 +7,12 @@ const pokedexControllers = {
     },
 
     show: (req, res) => {
-        res.render('pokedex/show.ejs', { data : pokemon.getByIndex(req.params.index) });
+        const realID = parseInt(req.params.index) + 1;
+        const id = `${realID}`;
+        res.render('pokedex/show.ejs', { 
+            data : pokemon.getByIndex(req.params.index),
+            id : id
+        });
     },
 
     init: (req, res) => {
@@ -15,11 +20,13 @@ const pokedexControllers = {
     },
 
     create: (req, res) => {
-   
         const index=pokemon.getLength();
         const newPokemon = pokemon.getByIndex(Math.floor(Math.random() * index));
-        const nameFromFrom = JSON.parse(JSON.stringify(req.body.name));
-        newPokemon.name = nameFromFrom;
+        const nameFromForm = JSON.parse(JSON.stringify(req.body.name));
+        newPokemon.name = nameFromForm;
+        const tagsFromForm = req.body.type;
+        const tags = tagsFromForm.split(',');
+        newPokemon.type = tags;
         newPokemon.img = req.body.img;
         pokemon.addNew(newPokemon);
         res.redirect(`/${index}`);
@@ -36,13 +43,11 @@ const pokedexControllers = {
     },
 
     edit : (req, res) => {
-        res.render('pokedex/edit.ejs', { data : pokemon.getByIndex(req.params.index) });
+        res.render('pokedex/edit.ejs', { 
+            data : pokemon.getByIndex(req.params.index),
+            index : req.params.index
+        });
     },
-
-    update : (req, res) => {
-        pokemon.updateByIndex(req.params.index, req.body);
-        res.redirect(`/${req.params.index}`);
-    }
 };
 
 module.exports = {
