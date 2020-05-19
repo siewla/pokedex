@@ -15,9 +15,13 @@ const pokedexControllers = {
     },
 
     create: (req, res) => {
-        const newPokemon = buildPokemon(req.body);
+   
+        const index=pokemon.getLength();
+        const newPokemon = pokemon.getByIndex(Math.floor(Math.random() * index));
+        const nameFromFrom = JSON.parse(JSON.stringify(req.body.name));
+        newPokemon.name = nameFromFrom;
+        newPokemon.img = req.body.img;
         pokemon.addNew(newPokemon);
-        let index=pokemon.getLength()-1;
         res.redirect(`/${index}`);
     },
 

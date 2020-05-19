@@ -1,19 +1,19 @@
-const POKEMON  = require('../models/pokemon');
+const data  = require('../models/pokemon');
+
+const POKEMON = JSON.parse(JSON.stringify(data));
 
 class Pokemon{
-    constructor (id, name, img, type, stats, damages, misc){
-        this.index = id;
+    constructor (name, img, type, stats, damages){
         this.name = name;
         this.img = img;
         this.type = type;
         this.stats = stats;
         this.damages = damages;
-        this.misc = misc;
     }
 }
 
-const buildPokemon = ({ id, name, img, type, stats, damages, misc }) => {
-    return new Pokemon (id, name, img, type, stats, damages, misc);
+const buildPokemon = ({ name, img, type, stats, damages }) => {
+    return new Pokemon ( name, img, type, stats, damages);
 };
 
 const pokemon = {
@@ -43,8 +43,7 @@ const pokemon = {
 
     deleteAllItems () {
         POKEMON.splice (0, POKEMON.length);
-    }
-
+    },
 };
 
 module.exports ={

@@ -76,3 +76,29 @@ body {
     height: 4vh;
     border-radius: 1vh;
 }
+
+.show-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.show-container > div {
+    width: max-content;
+    height: max-content;
+    border: 1px solid black;
+    background-color: #3D7DCA;
+    padding: 2vh;
+    border-radius: 2vh;
+    margin-left: 5vh;
+} 
+
+.show-container > div> h2 {
+    color: white;
+    font-size: 3vh;
+}
+
+.show-container > div> h2 >ul > li{
+    padding: 0.5vh;
+}

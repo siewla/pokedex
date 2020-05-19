@@ -5,6 +5,45 @@
     </head>
     <body>
         <h1 id="heading"><%=data.name%></h1>
-        <img src=<%=data.img%>
+        <div class= "show-container">
+            <div>
+                <h2>id =<%=data.index%></h2>
+                <img src=<%=data.img%>>
+            </div>
+            <div>
+                <h2>Type
+                    <ul class = "type-container">
+                        <%data.type.forEach((tag) => { %>
+                        <li>
+                            <button type="submit" class="btn waves-effect waves-light edit-button tags"><%=tag%></button>
+                        </li>
+                        <% }) %>
+                    </ul>
+                </h2>
+            </div>
+            <div>
+                <h2>Stats
+                    <ul class = "stats-container">
+                        <%Object.keys(data.stats).forEach((tag) => { %>
+                        <li>
+                            <button type="submit" class="btn waves-effect waves-light edit-button tags"><%=tag%> : <%=data.stats[tag]%></button>
+                        </li>
+                        <% }) %>
+                    </ul>
+                </h2>
+            </div>
+            <div>
+                <h2>Damages
+                    <ul class = "stats-container">
+                        <%Object.keys(data.damages).forEach((tag) => { %>
+                        <li>
+                            <button type="submit" class="btn waves-effect waves-light edit-button tags"><%=tag%> : <%=data.damages[tag]%></button>
+                        </li>
+                        <% }) %>
+                    </ul>
+                </h2>
+            </div>
+        </div>
+        
     </body>
 </html>
