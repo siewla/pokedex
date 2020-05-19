@@ -2,6 +2,7 @@ const { pokedexControllers } = require('../controllers/pokemon');
 
 module.exports = (app) => {
     app.get('/', pokedexControllers.index); //index route
+    app.get('/search', pokedexControllers.search); //search route
     app.get('/new', pokedexControllers.init); //new route
     app.get('/:index', pokedexControllers.show); //show route
     app.post('/', pokedexControllers.create); //create/post route

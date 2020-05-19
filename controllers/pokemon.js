@@ -6,6 +6,10 @@ const pokedexControllers = {
         res.render('pokedex/index.ejs', { data: pokemon.getAll() });
     },
 
+    search: (req,res) => {
+        res.render('pokedex/search.ejs', { data: pokemon.getAll() });
+    },
+
     show: (req, res) => {
         const realID = parseInt(req.params.index) + 1;
         const id = `${realID}`;

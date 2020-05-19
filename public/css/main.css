@@ -121,3 +121,8 @@ body {
     background-color: rgb(26, 194, 143);
     border-radius: 1vh;
 }
+
+.image-table{
+    width: 10vh;
+    height: 10vh;
+}
