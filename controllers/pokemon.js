@@ -1,5 +1,5 @@
 //DATABASE 
-const { pokemon , buildPokemon } = require('../database/pokemon');
+const { pokemon } = require('../models/pokemon');
 
 const pokedexControllers = {
     index: (req, res) => {
